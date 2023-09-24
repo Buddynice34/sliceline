@@ -1,0 +1,83 @@
+:root
+{
+    --black: #000000;
+    --blue: #14213D;
+    --red: #ef233c;
+    --orange: #FCA311;
+    --orangyish-yellow: hsla(37, 100%, 51%, 0.7);
+    --gray: #E5E5E5;
+    --white: #FFFFFF;
+}
+
+header {
+    background-image: url('./Images/bg.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+nav
+{
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+h4
+{
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    color: var(--orange);
+}
+
+nav h4 span
+{
+    color: var(--red);
+}
+
+nav h4 i
+{
+    font-size: 26px;
+    color: var(--orange);
+}
+
+
+span
+{
+    color: var(--orange);
+}
+
+
+.span2
+{
+    color: var(--red);
+}
+
+#menu-items img
+{
+    height: 250px;
+    object-fit: cover;
+}
+
+.btn
+{
+    background: var(--orange);
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover
+{
+    background: var(--orangyish-yellow);
+    
+}
+
+
+#about img
+{
+    height: 450px;
+    width: 600px;
+    object-fit: cover;
+}

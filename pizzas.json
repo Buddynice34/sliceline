@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Margherita Pizza",
+      "image": "/Images/pizza1.jpg",
+      "description": "Delicious tomato sauce, fresh mozzarella, and basil leaves."
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "image": "/Images/pizza2.jpg",
+      "description": "Classic pepperoni slices with melted cheese on top."
+    },
+    {
+      "name": "Vegetarian Pizza",
+      "image": "/Images/vegi-pizza.jpg",
+      "description": "A medley of fresh vegetables and mozzarella cheese."
+    },
+    {
+      "name": "Hawaiian Pizza",
+      "image": "/Images/hawaiian-pizza.jpg",
+      "description": "Sweet pineapple, ham, and mozzarella cheese."
+    },
+    {
+      "name": "Supreme Pizza",
+      "image": "/Images/supreme-pizza.jpg",
+      "description": "Loaded with pepperoni, sausage, bell peppers, onions, olives, and mushrooms."
+    },
+    {
+      "name": "BBQ Chicken Pizza",
+      "image": "/Images/bbq-chicken.jpg",
+      "description": "Tender BBQ chicken, red onions, and cheddar cheese."
+    }
+  ]
+  

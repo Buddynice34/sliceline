@@ -63,8 +63,13 @@ span
 
 .btn
 {
+    width: 100%;
     background: var(--orange);
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
     transition: transform 0.2s ease;
 }
 
@@ -74,10 +79,35 @@ span
     
 }
 
+.btn i{
+    font-size: 18px;
+    margin-right: 5px;
+}
 
 #about img
 {
     height: 450px;
     width: 600px;
     object-fit: cover;
+}
+
+
+.price-label {
+    font-size: 28px; 
+    padding-left: 10px;
+    color: #726865de; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    margin-top: 10px; 
+}
+
+/* Center align card headings */
+.card-title {
+    text-align: center;
+}
+
+/* Add padding to card descriptions */
+.card-description {
+    
+    text-align: center;
 }

@@ -1,3 +1,8 @@
+function formatPriceZAR(price) {
+    return `R ${price.toFixed(2)}`;
+}
+
+
 // Function to fetch and populate menu items from menu.json
 async function fetchAndPopulateMenuItems() {
     try {
@@ -10,17 +15,18 @@ async function fetchAndPopulateMenuItems() {
             const menuItem = document.createElement("div");
             menuItem.classList.add("menu-item");
             const menuItemHTML = `
-            <div class="col">
-                <div class="card mb-4">
-                    <img src="${pizza.image}" class="card-img-top" alt="${pizza.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${pizza.name}</h5>
-                        <p class="card-text">${pizza.description}</p>
-                        <button class="btn btn-primary">Add to Cart</button>
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="${pizza.image}" class="card-img-top" alt="${pizza.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${pizza.name}</h5>
+                            <p class="card-description">${pizza.description}</p>
+                            <p class="card-text"><strong class="price-label">${formatPriceZAR(pizza.price)}</strong></p>
+                            <button class="btn btn-primary"><i class='bx bx-cart'></i> Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
             const image = document.createElement("img");
             image.src = pizza.image;
             image.alt = pizza.name;

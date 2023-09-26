@@ -9,6 +9,11 @@
     --white: #FFFFFF;
 }
 
+*, *::before, *::after
+{
+    border: none;
+}
+
 header {
     background-image: url('./Images/bg.jpg'); /* Replace with your image file path */
     background-size: cover;

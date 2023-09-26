@@ -2,41 +2,60 @@ const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartItemsContainer = document.getElementById("cart-items");
 
-cart.forEach((cartItem) => {
-    const itemHTML = `
-        <div class="cart-item">
-            <h5>${cartItem.name}</h5>
-            <p>Price: R ${cartItem.price.toFixed(2)}</p>
-            <p>Quantity: ${cartItem.Quantity}</p>
-        </div>
-    `;
-    cartItemsContainer.innerHTML += itemHTML;
-});
+function display() {
+    cartItemsContainer.innerHTML = "";
+    cart.forEach((cartItem) => {
+        const itemHTML = `
+            <div class="cart-item d-flex justify-content-between">
+                <div>
+                    <h5>${cartItem.name}</h5>
+                    <p>Price: ZAR ${cartItem.price.toFixed(2)}</p>
+                    <p>Quantity: ${cartItem.Quantity}</p>
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="removePizzaFromCart('${cartItem.name}')">Delete</button>
+                </div>
+            </div>
+        `;
+        cartItemsContainer.innerHTML += itemHTML;
+    });
+}
 
-function updatePizzaQuantity(index, newQuantity) {
-    // Ensure the index is valid
+function updatePizzaQuantity(index) {
     if (index >= 0 && index < cart.length) {
-        // Update the quantity
-        cart[index].quantity = newQuantity;
+        cart[index].Quantity ++;
     }
-    // Recalculate and update the total items and total price
-    updateTotals();
-    // Refresh the cart display
-    displayCart();
 }
 
 function calculateTotalItems() {
+    const totalItemsElement = document.getElementById("total-items");
     const totalItems = cart.reduce((acc, item) => acc + item.Quantity, 0);
-    return totalItems;
+    totalItemsElement.textContent = totalItems;
 }
 
 function calculateTotalPrice() {
     const totalPrice = cart.reduce((acc, item) => acc + item.price * item.Quantity, 0);
-    return totalPrice.toFixed(2); // Format the price with two decimal places
+    totalPriceElement.textContent = totalPrice.toFixed(2);
 }
 
-const totalItemsElement = document.getElementById("total-items");
+function removePizzaFromCart(pizzaName) {
+    console.log(pizzaName);
+    const index = cart.findIndex((item) => item.name == pizzaName);
+
+    if (index !== -1) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        calculateTotalItems();
+        calculateTotalPrice();
+        display();
+    }
+}
+
+
 const totalPriceElement = document.getElementById("total-price");
 
-totalItemsElement.textContent = calculateTotalItems();
-totalPriceElement.textContent = calculateTotalPrice();
+
+
+document.addEventListener("DOMContentLoaded", calculateTotalItems);
+document.addEventListener("DOMContentLoaded", calculateTotalPrice);
+document.addEventListener("DOMContentLoaded", display);

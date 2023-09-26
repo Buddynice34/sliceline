@@ -3,37 +3,43 @@
       "name": "Margherita Pizza",
       "image": "/Images/pizza1.jpg",
       "description": "Delicious tomato sauce, fresh mozzarella, and basil leaves.",
-      "price": 169.99
+      "price": 169.99,
+      "Quantity" : 1
     },
     {
       "name": "Pepperoni Pizza",
       "image": "/Images/pizza2.jpg",
       "description": "Classic pepperoni slices with melted cheese on top.",
-      "price": 179.99
+      "price": 179.99,
+      "Quantity" : 1
     },
     {
       "name": "Vegetarian Pizza",
       "image": "/Images/vegi-pizza.jpg",
       "description": "A medley of fresh vegetables and mozzarella cheese.",
-      "price": 159.99
+      "price": 159.99,
+      "Quantity" : 1
     },
     {
       "name": "Hawaiian Pizza",
       "image": "/Images/hawaiian-pizza.jpg",
       "description": "Sweet pineapple, ham, and mozzarella cheese.",
-      "price": 165.99
+      "price": 165.99,
+      "Quantity" : 1
     },
     {
       "name": "Supreme Pizza",
       "image": "/Images/supreme-pizza.jpg",
       "description": "Loaded with pepperoni, sausage, bell peppers, onions, olives, and mushrooms.",
-      "price": 199.99
+      "price": 199.99,
+      "Quantity" : 1
     },
     {
       "name": "BBQ Chicken Pizza",
       "image": "/Images/bbq-chicken.jpg",
       "description": "Tender BBQ chicken, red onions, and cheddar cheese.",
-      "price": 189.99
+      "price": 189.99,
+      "Quantity" : 1
     }
   ]
   

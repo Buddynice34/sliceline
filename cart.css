@@ -1,4 +1,36 @@
+:root
+{
+    --orangyish-yellow: hsla(37, 100%, 51%, 0.7);
+}
+
 #cart-items .btn
 {
     background: red;
+}
+
+.quantity
+{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#cart-items .btn-success,
+#cart-items .btn-warning
+{
+    width: 50%;
+    background: var(--orangyish-yellow);
+    color: white;
+}
+
+#cart-items .btn-success
+{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-right: 5px;
+}
+
+#cart-items .btn-warning
+{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }

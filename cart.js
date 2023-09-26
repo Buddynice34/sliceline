@@ -13,6 +13,10 @@ function display() {
                     <p>Quantity: ${cartItem.Quantity}</p>
                 </div>
                 <div>
+                    <div class="quantity">
+                        <button class="btn btn-success" onclick="increaseQuantity('${cartItem.name}')">+</button>
+                        <button class="btn btn-warning" onclick="decreaseQuantity('${cartItem.name}')">-</button>
+                    </div>
                     <button class="btn btn-danger" onclick="removePizzaFromCart('${cartItem.name}')">Delete</button>
                 </div>
             </div>
@@ -34,8 +38,10 @@ function calculateTotalItems() {
 }
 
 function calculateTotalPrice() {
+    const totalPriceElement = document.getElementById("total-price");
     const totalPrice = cart.reduce((acc, item) => acc + item.price * item.Quantity, 0);
     totalPriceElement.textContent = totalPrice.toFixed(2);
+    
 }
 
 function removePizzaFromCart(pizzaName) {
@@ -51,10 +57,32 @@ function removePizzaFromCart(pizzaName) {
     }
 }
 
+function increaseQuantity(pizzaName) {
+    var index = cart.findIndex((item) => item.name == pizzaName);
+    if (index >= 0 && index < cart.length) {
+        cart[index].Quantity += 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        calculateTotalItems();
+        calculateTotalPrice();
+        display();
+    }
+}
 
-const totalPriceElement = document.getElementById("total-price");
-
-
+function decreaseQuantity(pizzaName) {
+    var index = cart.findIndex((item) => item.name == pizzaName);
+    if (index >= 0 && index < cart.length) {
+        if (cart[index].Quantity > 1) {
+            cart[index].Quantity -= 1;
+        } else {
+            // If quantity is 1, remove the item from the cart
+            cart.splice(index, 1);
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        calculateTotalItems();
+        calculateTotalPrice();
+        display();
+    }
+}
 
 document.addEventListener("DOMContentLoaded", calculateTotalItems);
 document.addEventListener("DOMContentLoaded", calculateTotalPrice);

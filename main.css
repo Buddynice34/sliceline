@@ -149,7 +149,7 @@ span
 }
 
 
-@media (max-width: 786px) {
+@media (max-width: 991px) {
     .cart-icon
     {
         bottom: 0;

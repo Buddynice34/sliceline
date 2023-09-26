@@ -27,6 +27,7 @@ nav
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+    position: relative;
 }
 
 h4
@@ -59,6 +60,36 @@ span
 {
     color: var(--red);
 }
+
+.cart-icon {
+    position: absolute;
+    right: 0; /* Align the cart icon to the right */
+    margin-right: 20px; /* Add some right margin for spacing */
+}
+
+/* Style the cart icon */
+.cart-icon a i {
+    font-size: 26px; /* Adjust the icon size */
+    color: var(--orange); /* Set the icon color */
+}
+
+
+/* Position the cart item count */
+.cart-item-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--red); /* Background color for the item count */
+    color: white; /* Text color for the item count */
+    font-size: 12px; /* Adjust the font size as needed */
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make it a circle */
+    text-align: center; /* Center the text horizontally */
+    line-height: 20px; /* Center the text vertically */
+    z-index: 2; /* Ensure it's above the cart icon */
+}
+
 
 #menu-items img
 {
@@ -115,4 +146,13 @@ span
 .card-description {
     
     text-align: center;
+}
+
+
+@media (max-width: 786px) {
+    .cart-icon
+    {
+        bottom: 0;
+        padding-right: 5px;
+    }
 }

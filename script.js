@@ -1,5 +1,4 @@
-// Initialize an empty shopping cart array
-const cart = [];
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
 function formatPriceZAR(price) {
@@ -7,15 +6,34 @@ function formatPriceZAR(price) {
 }
 
 function addToCart(menuItem) {
-    cart.push(menuItem); // Add the selected pizza to the cart array
+    const existingPizzaIndex = cart.findIndex((item) => item.name === menuItem.name);
+    
+    if (existingPizzaIndex !== -1) {
+        console.log(cart[existingPizzaIndex]);
+        // Pizza already exists in the cart, so increment its quantity
+        cart[existingPizzaIndex].Quantity += 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+    } else {
+        // Pizza is not in the cart, so add it with a quantity of 1
+        cart.push(menuItem);
+        
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    
     updateCartDisplay(); // Update the cart display (optional)
-    console.log(cart);
+    
 }
 
 function updateCartDisplay() {
     const cartItemCount = document.querySelector(".cart-item-count");
-    cartItemCount.textContent = cart.length.toString();
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    var count = 0;
+    cart.forEach(item => {
+        count += item.Quantity;
+    });
+    cartItemCount.textContent = count.toString();
 }
+
 
 
 // Function to fetch and populate menu items from menu.json
@@ -63,6 +81,7 @@ async function fetchAndPopulateMenuItems() {
             priceLabel.textContent = formatPriceZAR(pizza.price);
             price.appendChild(priceLabel);
 
+            //C
             // Create the "Add to Cart" button
             const addToCartButton = document.createElement("button");
             addToCartButton.classList.add("btn", "btn-primary");
@@ -90,4 +109,4 @@ async function fetchAndPopulateMenuItems() {
 
 // Use DOMContentLoaded event to ensure the DOM is fully loaded before running the script
 document.addEventListener("DOMContentLoaded", fetchAndPopulateMenuItems);
-console.log(cart);
+document.addEventListener("DOMContentLoaded", updateCartDisplay);

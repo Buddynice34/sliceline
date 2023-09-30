@@ -84,6 +84,11 @@ function decreaseQuantity(pizzaName) {
     }
 }
 
+function redirectPage()
+{
+    window.location.href = "./checkout.html";
+}
+
 document.addEventListener("DOMContentLoaded", calculateTotalItems);
 document.addEventListener("DOMContentLoaded", calculateTotalPrice);
 document.addEventListener("DOMContentLoaded", display);

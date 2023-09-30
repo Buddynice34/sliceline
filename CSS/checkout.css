@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap');
+
+:root
+{
+    --black: #000000;
+    --blue: #14213D;
+    --red: #ef233c;
+    --orange: #FCA311;
+    --orangyish-yellow: hsla(37, 100%, 51%, 0.7);
+    --gray: #E5E5E5;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+nav
+{
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    position: relative;
+}
+
+h4
+{
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    color: var(--orange);
+}
+
+nav h4 span
+{
+    color: var(--red);
+}
+
+nav h4 i
+{
+    font-size: 26px;
+    color: var(--orange);
+}
+
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 15rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#countdown {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#message {
+    font-size: 18px;
+    margin-top: 10px;
+}

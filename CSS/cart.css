@@ -5,6 +5,11 @@
     --orangyish-yellow: hsla(37, 100%, 51%, 0.7);
 }
 
+*
+{
+    font-family: 'Ubuntu', sans-serif;
+}
+
 #cart-items .btn
 {
     background: red;

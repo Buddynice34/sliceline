@@ -12,6 +12,7 @@
 *, *::before, *::after
 {
     border: none;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 header {

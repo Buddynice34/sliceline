@@ -60,7 +60,7 @@ function populateOrderedPizzas(limit) {
             populateOrderedPizzas(limit);
             // Hide the "Show Less" button and add the "Show More" button
             showLessButton.classList.add("d-none");
-            orderedPizzasContainer.appendChild(showMoreButton);
+            
         });
 
 }
